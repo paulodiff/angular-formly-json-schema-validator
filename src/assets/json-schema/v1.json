@@ -1,7 +1,7 @@
 {
   "schema": {
-    "title": "A registration form",
-    "description": "A simple form example.",
+    "title": "R1",
+    "description": "S FORM 1",
     "type": "object",
     "required": [
       "firstName",
@@ -11,7 +11,7 @@
       "firstName": {
         "type": "string",
         "title": "First name",
-        "default": "Chuck"
+        "default": "F_DEFAULT"
       },
       "lastName": {
         "type": "string",

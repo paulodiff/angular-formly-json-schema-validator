@@ -29,6 +29,7 @@ export class AppComponent {
     'anyOf',
     'oneOf',
     'select_alternatives',
+    'v1'
   ];
 
   constructor(

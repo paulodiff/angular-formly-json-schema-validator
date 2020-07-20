@@ -1,13 +1,47 @@
 {
   "schema": {
-    "title": "R1",
-    "description": "S FORM 1",
+    "title": "Configurazione ISTANZA DIGITALE",
+    "description": "File di configurazione per una istanza digitale",
+    "definitions": {
+      "address": {
+        "type": "object",
+        "properties": {
+          "street_address": {
+            "title": "Address",
+            "type": "string"
+          },
+          "city": {
+            "title": "City",
+            "type": "string"
+          },
+          "state": {
+            "title": "State",
+            "type": "string"
+          }
+        },
+        "required": [
+          "street_address",
+          "city",
+          "state"
+        ]
+      }
+    },
     "type": "object",
     "required": [
       "firstName",
       "lastName"
     ],
     "properties": {
+      "idIstanza": {
+        "type": "string",
+        "title": "First name",
+        "description" : "",
+        "default": "F_DEFAULT"
+      },
+      "billing_address": {
+        "title": "Billing Address",
+        "$ref": "#/definitions/address"
+      },
       "firstName": {
         "type": "string",
         "title": "First name",

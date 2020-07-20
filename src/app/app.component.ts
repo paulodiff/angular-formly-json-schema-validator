@@ -17,7 +17,7 @@ export class AppComponent {
 
   type: string;
   examples = [
-    'simple',
+    'v1',
     'nested',
     'arrays',
     'numbers',
@@ -29,7 +29,7 @@ export class AppComponent {
     'anyOf',
     'oneOf',
     'select_alternatives',
-    'v1'
+    'simple'
   ];
 
   constructor(

@@ -37,7 +37,7 @@ export class AppComponent {
     private formlyJsonschema: FormlyJsonschema,
     private http: HttpClient,
   ) {
-    this.loadExample(this.examples[0]);
+    this.loadExample(this.examples[1]);
   }
 
   loadExample(type: string) {

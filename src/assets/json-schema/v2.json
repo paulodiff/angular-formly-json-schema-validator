@@ -42,7 +42,8 @@
               },
               "type" : {
                 "title" : "type",
-                "type" : "string"
+                "type" : "string",
+                "default": "TEST"
               },
               "label" : {
                 "title" : "label",
@@ -56,6 +57,29 @@
                 "default" : true
               }
             }
+          },
+          "validators" : {
+            "type" : "object", 
+            "title" : "validators",
+            "description" : "elenco dei validatori",
+            "properties" : {
+             
+              "validation": {
+        "type": "array",
+        "title": "Scegliere uno più validatori da assegnare al campo",
+        "items": {
+          "type": "string",
+          "enum": [
+            "emailValidator",
+            "euroValidator",
+            "capValidator",
+            "iseeValidator"
+          ]
+        },
+        "uniqueItems": true
+      }
+            }
+
           }
         }
       },

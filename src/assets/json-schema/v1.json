@@ -3,6 +3,61 @@
     "title": "Configurazione ISTANZA DIGITALE",
     "description": "File di configurazione per una istanza digitale",
     "definitions": {
+      "responseConfig": {
+        "type": "object",
+        "title" : "configurazione/template per i messaggi di risposta",
+        "description": "inserire in questa sezione tutti i dati relativi alla configurazione dei messaggi di risposta",
+        "properties": {
+          "messaggioMailTesto": {
+            "title": "messaggioMailTesto",
+            "description" : "Oggetto della mail di risposta/notifica dell'avvenuta protocollazione",
+            "type": "string",
+            "default" : "COMUNE DI XXXX - Notifica inoltro istanza"
+          },
+          "templateRisposta": {
+            "title": "templateRisposta",
+            "description" : "nome del file che contiene il template per la risposta a video",
+            "type": "string",
+            "default" : "template1.txt"
+          },
+          "templateOggetto": {
+            "title": "templateOggetto",
+            "description" : "nome del file del template che contiene l'oggetto del protocollo",
+            "type": "string",
+            "default" : "template2.txt"
+          }
+        },
+        "required": [
+          "messaggioMailTesto",
+          "templateRisposta",
+          "templateOggetto"
+
+        ]
+      },
+      "protocolloConfig": {
+        "type": "object",
+        "title" : "configurazione dati per la protocollazion",
+        "description": "inserire in questa sezione tutti i dati relativi alla protocollazione",
+        "properties": {
+          "street_address": {
+            "title": "Address",
+            "type": "string"
+          },
+          "city": {
+            "title": "City",
+            "type": "string"
+          },
+          "state": {
+            "title": "State",
+            "type": "string"
+          }
+        },
+        "required": [
+          "street_address",
+          "city",
+          "state"
+        ]
+      },
       "address": {
         "type": "object",
         "properties": {
@@ -34,47 +89,21 @@
     "properties": {
       "idIstanza": {
         "type": "string",
-        "title": "First name",
-        "description" : "",
-        "default": "F_DEFAULT"
+        "title": "idIstanza",
+        "description" : "identificatore dell'istanza ad esempio DINPI01 max 8 caratteri",
+        "default": "XXXXXXXXXX",
+        "maxLength": 8
       },
-      "billing_address": {
-        "title": "Billing Address",
-        "$ref": "#/definitions/address"
-      },
-      "firstName": {
-        "type": "string",
-        "title": "First name",
-        "default": "F_DEFAULT"
-      },
-      "lastName": {
-        "type": "string",
-        "title": "Last name"
-      },
-      "age": {
-        "type": "integer",
-        "title": "Age"
-      },
-      "bio": {
-        "type": "string",
-        "title": "Bio"
-      },
-      "password": {
-        "type": "string",
-        "title": "Password",
-        "minLength": 3
-      },
-      "telephone": {
-        "type": "string",
-        "title": "Telephone",
-        "minLength": 10
+      "configRisposta" : {
+        "title" : "Configurazione della risposta",
+        "$ref": "#/definitions/responseConfig"
+
       }
+      
+      
     }
   },
   "model": {
-    "lastName": "Norris",
-    "age": 75,
-    "bio": "Roundhouse kicking asses since 1940",
-    "password": "noneed"
+    
   }
 }

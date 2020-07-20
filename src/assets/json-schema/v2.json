@@ -5,8 +5,8 @@
       "formField":{
         "type": "object",
         "oneOf":[
-          { "title": "F1 title",
-            "description" : "F1 descr",
+          { "title": "input-type",
+            "description" : "input-type",
             "$ref" : "#/definitions/f1" },
           { "title": "F2 title",
             "description" : "F2 descr",
@@ -17,16 +17,45 @@
 
 
       "f1" : {
-        "title" : "f1",
+        "title" : "input type",
         "type" : "object",
         "properties": {
-          "f1_t1": {
+          "key": {
             "type": "string",
-            "title": "f1_t1"
+            "title": "key",
+            "description" : "descrizone del nome del campo"
           },
-          "f2_t2": {
-            "type": "string",
-            "title": "f1_t2"
+          "templateOptions" : {
+            "type" : "object", 
+            "title" : "templateOptions",
+            "description" : "attributi descrittivi del campo",
+            "properties" : {
+              "itemOrder" : {
+                "title" : "itemOrder",
+                "description" : "Indica l'ordine di ",
+                "type" : "number",
+                "default" : 100
+              },
+              "title" : {
+                "title" : "title",
+                "type" : "string"
+              },
+              "type" : {
+                "title" : "type",
+                "type" : "string"
+              },
+              "label" : {
+                "title" : "label",
+                "description" : "testo che viene evidenziato",
+                "type" : "string"
+              },
+              "required" : {
+                "title" : "required",
+                "description" : "obbligatorio?",
+                "type" : "boolean",
+                "default" : true
+              }
+            }
           }
         }
       },

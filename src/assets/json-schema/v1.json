@@ -25,6 +25,30 @@
             "description" : "nome del file del template che contiene l'oggetto del protocollo",
             "type": "string",
             "default" : "template2.txt"
+          },
+          "templateEmail": {
+            "title": "templateEmail",
+            "description" : "nome del file del template che contiene il testo della mail di risposta",
+            "type": "string",
+            "default" : "template3.txt"
+          },
+          "sendEmail": {
+            "title": "sendEmail",
+            "description" : "invia o meno il messaggio in copia agli indirizzi indicati in seguito",
+            "type": "boolean",
+            "default" : false
+          },
+          "noreply": {
+            "title": "noreply",
+            "description" : "indirizzo da cui partono i messagi email di notifica",
+            "type": "string",
+            "default" : "no-reply@host.com"
+          },
+          "bccDebug": {
+            "title": "bccDebug",
+            "description" : "indirizzi (eventualmente separati da ;) a cui inviare copia del messaggio di risposta ad es: email1@host.com;email2@host.com",
+            "type": "string",
+            "default" : "email1@host.com;email2@host.com"
           }
         },
         "required": [

@@ -91,7 +91,7 @@
         "type": "string",
         "title": "idIstanza",
         "description" : "identificatore dell'istanza ad esempio DINPI01 max 8 caratteri",
-        "default": "XXXXXXXXXX",
+        "default": "ISTA001",
         "maxLength": 8
       },
       "configRisposta" : {

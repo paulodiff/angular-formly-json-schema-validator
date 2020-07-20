@@ -1,0 +1,88 @@
+{
+  "schema": {
+      "definitions": {
+
+      "formField":{
+        "type": "object",
+        "oneOf":[
+          { "title": "F1 title",
+            "description" : "F1 descr",
+            "$ref" : "#/definitions/f1" },
+          { "title": "F2 title",
+            "description" : "F2 descr",
+            "$ref" : "#/definitions/f2" }
+   
+        ]
+      },
+
+
+      "f1" : {
+        "title" : "f1",
+        "type" : "object",
+        "properties": {
+          "f1_t1": {
+            "type": "string",
+            "title": "f1_t1"
+          },
+          "f2_t2": {
+            "type": "string",
+            "title": "f1_t2"
+          }
+        }
+      },
+      "f2" : {
+        "title" : "f2",
+        "type" : "object",
+        "properties": {
+          "f1_t1": {
+            "type": "string",
+            "title": "f2_t1"
+          },
+          "f2_t2": {
+            "type": "string",
+            "title": "f2_t2"
+          }
+        }
+       
+      },
+      "Thing": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "default": "Default name"
+          }
+        }
+      }
+    },
+    "type": "object",
+    "properties": {
+
+       "p1": {
+        "title": "p1",
+        "$ref": "#/definitions/formField"
+      },
+
+      "age": {
+        "type": "integer",
+        "title": "Age"
+      },
+
+      "minItemsList": {
+        "type": "array",
+        "title": "A list",
+        "items": {
+        
+          "$ref": "#/definitions/formField"
+        }
+          
+      }
+      
+    }
+
+ 
+  },
+  "model": {
+   
+  }
+}

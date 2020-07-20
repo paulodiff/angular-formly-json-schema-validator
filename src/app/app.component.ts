@@ -18,6 +18,7 @@ export class AppComponent {
   type: string;
   examples = [
     'v1',
+    'v2',
     'nested',
     'arrays',
     'numbers',

@@ -6,6 +6,9 @@
         "type": "object",
 
         "oneOf":[
+          { "title": "infoSimple",
+            "$ref" : "#/definitions/infoSimple" },
+
           { "title": "input-type-string",
             "$ref" : "#/definitions/input-type-string" },
 
@@ -33,6 +36,42 @@
       },
 
 
+      "infoSimple" : {
+        "title" : "infoSimple",
+        "type" : "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "type",
+            "default": "infoSimple"
+          },
+          "key": {
+            "type": "string",
+            "title": "key",
+            "description" : "identificativo unico dell'attributo anche da utiliattributi descrittivi del campo"
+          },
+          "templateOptions" : {
+            "type" : "object", 
+            "title" : "templateOptions",
+            "description" : "attributi descrittivi del campo",
+            "properties" : {
+              "itemOrder" : {
+                "title" : "itemOrder",
+                "description" : "Indica l'ordine di visualizzazione",
+                "type" : "number",
+                "default" : 100
+              },
+              "title" : {
+                "title" : "title",
+                "description" : "Testo da visualizzare",
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+
+
       "input-type-string" : {
         "title" : "input type string",
         "type" : "object",
@@ -49,7 +88,7 @@
             "properties" : {
               "itemOrder" : {
                 "title" : "itemOrder",
-                "description" : "Indica l'ordine di ",
+                "description" : "Indica l'ordine di visualizzazione",
                 "type" : "number",
                 "default" : 100
               },
@@ -82,20 +121,20 @@
             "properties" : {
              
               "validation": {
-        "type": "array",
-        "title": "Scegliere uno più validatori da assegnare al campo",
-        "items": {
-          "type": "string",
-          "enum": [
-            "fileValidator",
-            "emailValidator",
-            "euroValidator",
-            "capValidator",
-            "iseeValidator"
-          ]
-        },
-        "uniqueItems": true
-      }
+                "type": "array",
+                "title": "Scegliere uno più validatori da assegnare al campo",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "fileValidator",
+                    "emailValidator",
+                    "euroValidator",
+                    "capValidator",
+                    "iseeValidator"
+                  ]
+                },
+                "uniqueItems": true
+              }
 
             },
             "required": [ "validation" ]

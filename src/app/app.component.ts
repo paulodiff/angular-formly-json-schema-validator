@@ -41,6 +41,7 @@ export class AppComponent {
   }
 
   loadExample(type: string) {
+    console.log('loadExample:', type);
     this.http.get<any>(`assets/json-schema/${type}.json`).pipe(
       tap(({ schema, model }) => {
         this.type = type;
